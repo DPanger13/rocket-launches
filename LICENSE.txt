@@ -1,0 +1,4 @@
+Copyright 2019 Derek Panger. All rights reserved.
+
+This software includes other software from various sources. The notices and/or licenses for those
+sources are provided in the licenses directory within the project's root directory.
