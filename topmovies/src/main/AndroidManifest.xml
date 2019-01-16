@@ -7,6 +7,13 @@
 
     <application tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
+        <activity android:name=".topmovies.TopMoviesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".movie.MovieActivity"/>
 
    </application>
