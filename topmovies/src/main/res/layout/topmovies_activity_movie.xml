@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#400498"
+                tools:text="Error"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="9.2"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_votes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1106047"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="tt0068646"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="The Godfather"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1972"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_content_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="R"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="24 Mar 1972"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_runtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="175"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_genres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Crime, Drama"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Francis"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_writers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="writer1, writer2, writer3"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_actors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="actor1, actor2, actor3"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="movie plot"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_languages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="language1, language2, language3"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="country"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_awards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="award1. award2"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_poster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="http://example.com"/>
+
+        <TextView
+                android:id="@+id/topmovies_activity_movie_metascore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="8.4"/>
+
+    </LinearLayout>
+
+</ScrollView>
