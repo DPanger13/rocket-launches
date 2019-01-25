@@ -27,3 +27,6 @@ minimized as much as possible due to its flakiness and massive, recurring waste 
 unit through end-to-end tests are standard so that both both development and QA time (if a QA person/team is present) are 
 minimized.
 * Prioritize code flexibility due to the volatility of business, product, and/or development requirements.
+
+## UI/UX
+Currently, no time has been spent on UI/UX so it should not be taken into consideration as a best practice.
