@@ -1,1 +1,1 @@
-include ':launches', ':app', ':base', ':launches-release'
+include ':launches', ':app', ':base'

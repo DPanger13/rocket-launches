@@ -19,6 +19,13 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://159.89.149.206:8081/artifactory/libs-release-local"
+            credentials {
+                username = "${artifactory_username}"
+                password = "${artifactory_password}"
+            }
+        }
     }
 
 }
