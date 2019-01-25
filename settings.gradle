@@ -1,1 +1,1 @@
-include ':topmovies', ':app', ':base', ':data-movies-release'
+include ':topmovies', ':app', ':base', ':launches-release'

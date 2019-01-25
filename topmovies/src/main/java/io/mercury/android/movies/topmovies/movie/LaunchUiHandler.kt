@@ -5,7 +5,7 @@ import io.reactivex.Flowable
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
-internal class MovieUiHandler @Inject constructor() {
+internal class LaunchUiHandler @Inject constructor() {
 
     private val _actions = PublishSubject.create<Action>()
     val actions: Flowable<Action> = _actions.toFlowable(BackpressureStrategy.BUFFER)

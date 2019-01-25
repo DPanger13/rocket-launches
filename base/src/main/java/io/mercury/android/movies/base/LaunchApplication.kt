@@ -3,7 +3,7 @@ package io.mercury.android.movies.base
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 
-class MovieApplication : Application() {
+class LaunchApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

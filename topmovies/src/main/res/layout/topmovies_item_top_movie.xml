@@ -7,52 +7,21 @@
         android:orientation="vertical">
 
     <TextView
-            android:id="@+id/topmovies_item_top_movie_rank"
+            android:id="@+id/launches_item_launch_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="1"/>
 
     <TextView
-            android:id="@+id/topmovies_item_top_movie_title"
+            android:id="@+id/launches_item_launch_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Godfather"/>
+            tools:text="Launch 1"/>
 
     <TextView
-            android:id="@+id/topmovies_item_top_movie_year"
+            android:id="@+id/launches_item_launch_datetime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="2934"/>
-
-    <TextView
-            android:id="@+id/topmovies_item_top_movie_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="tt002893"/>
-
-    <TextView
-            android:id="@+id/topmovies_item_top_movie_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="5.3"/>
-
-    <TextView
-            android:id="@+id/topmovies_item_top_movie_votes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="230984"/>
-
-    <ImageView
-            android:id="@+id/topmovies_item_top_movie_poster"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            tools:background="#000000"
-            tools:ignore="ContentDescription"/>
-
-    <TextView
-            android:id="@+id/topmovies_item_top_movie_imdb_page"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="imdb.com"/>
+            tools:text="Mar 98, 2018"/>
 
 </LinearLayout>

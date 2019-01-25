@@ -20,7 +20,7 @@ android {
 dependencies {
     implementation project(':base')
 
-    implementation project(':data-movies-release')
+    implementation project(':launches-release')
 
     // data layer module(s) would normally be provided through maven/etc. so transitive dependencies would be included
     // but since it's added manually, just include transitive deps here

@@ -4,14 +4,14 @@ import io.reactivex.subscribers.TestSubscriber
 import org.junit.Before
 import org.junit.Test
 
-class MovieUiHandlerUnitTest {
+class LaunchUiHandlerUnitTest {
 
-    private lateinit var uiHandler: MovieUiHandler
+    private lateinit var uiHandler: LaunchUiHandler
     private lateinit var actionSubscriber: TestSubscriber<Action>
 
     @Before
     fun SetUp() {
-        uiHandler = MovieUiHandler()
+        uiHandler = LaunchUiHandler()
 
         actionSubscriber = TestSubscriber()
     }

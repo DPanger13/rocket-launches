@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "io.mercury.android.movies.app"
+        applicationId "io.mercury.android.pagedLaunchSummary.app"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
