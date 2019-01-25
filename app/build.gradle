@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "io.mercury.android.pagedLaunchSummary.app"
+        applicationId "com.dpanger.android.launches"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -23,6 +23,6 @@ android {
 }
 
 dependencies {
-    implementation project(':topmovies')
+    implementation project(':launches')
     implementation project(':base')
 }

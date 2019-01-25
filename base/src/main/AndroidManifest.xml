@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
         xmlns:android="http://schemas.android.com/apk/res/android"
-        package="io.mercury.android.movies">
+        package="com.dpanger.android.launches">
 
     <application
             android:allowBackup="true"
