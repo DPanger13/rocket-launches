@@ -28,12 +28,12 @@ dependencies {
     application project(':app')
     feature project(':launches')
 
+    implementation 'com.dpanger.android.launches.data:launches:0.5.0'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     def androidx_version = "1.0.0"
     implementation "androidx.appcompat:appcompat:$androidx_version"
-
-    api 'com.jakewharton.threetenabp:threetenabp:1.1.1'
 }
 repositories {
     mavenCentral()
