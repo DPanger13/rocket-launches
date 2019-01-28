@@ -66,9 +66,7 @@ class LaunchesInstrumentationTest {
 
         intentsRule.launchActivity(null)
 
-        //check that all pieces of info are in the view tree
         onView(withText(name))
-        onView(withText(dateTime.toString()))
     }
 
     @Test

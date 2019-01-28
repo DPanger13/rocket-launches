@@ -7,6 +7,7 @@
 
     <dimen name="margin_window_default">16dp</dimen>
 
-    <dimen name="margin_list_item_two_line_vertical">12dp</dimen>
+    <dimen name="margin_list_item_two_line_vertical_text_only">12dp</dimen>
+    <dimen name="min_height_list_item_two_line_text_only">64dp</dimen>
 
 </resources>

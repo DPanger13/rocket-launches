@@ -15,6 +15,7 @@ import com.dpanger.android.launches.launches.launch.LaunchActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.launches_activity_launches.*
+import org.threeten.bp.format.DateTimeFormatter
 import toothpick.Scope
 import toothpick.Toothpick
 import toothpick.config.Module
@@ -43,8 +44,7 @@ class LaunchesActivity : AppCompatActivity() {
 
         if (savedInstanceState != null) initFromSavedState(savedInstanceState)
 
-        setContentView(R.layout.launches_activity_launches)
-        initLaunchList(pagedLaunchSummary)
+        initView()
     }
 
     private fun createDependencyInjectionScope(): Scope {
@@ -64,6 +64,16 @@ class LaunchesActivity : AppCompatActivity() {
 
     private fun initFromSavedState(savedInstanceState: Bundle) {
         pagedLaunchSummary = savedInstanceState.getParcelable(KEY_LAUNCHES)
+    }
+
+    private fun initView() {
+        setContentView(R.layout.launches_activity_launches)
+        initToolbar()
+        initLaunchList(pagedLaunchSummary)
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(launches_activity_launches_toolbar)
     }
 
     private fun initLaunchList(pagedLaunchSummary: PagedLaunchSummary?) {
@@ -169,7 +179,9 @@ class LaunchAdapter(
 
         val launchHolder = holder as LaunchViewHolder
         launchHolder.name.text = launch.name
-        launchHolder.dateTime.text = launch.dateTime.toString()
+
+        val formatter = DateTimeFormatter.ofPattern("MMM d")
+        launchHolder.dateTime.text = launch.dateTime.format(formatter)
 
         launchHolder.itemView.setOnClickListener { onLaunchClicked.invoke(launch) }
     }

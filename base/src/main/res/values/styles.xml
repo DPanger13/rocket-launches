@@ -70,4 +70,8 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </style>
+
 </resources>
