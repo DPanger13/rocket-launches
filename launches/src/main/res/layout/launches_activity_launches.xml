@@ -16,7 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="?actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:title="@string/app_name"/>
+                app:title="@string/launches_activity_launches_toolbar"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
