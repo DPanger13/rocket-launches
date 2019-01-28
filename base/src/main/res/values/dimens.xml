@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="opacity_primary">0.87</dimen>
+    <dimen name="opacity_secondary">0.54</dimen>
+    <dimen name="opacity_disabled">0.23</dimen>
+
+</resources>
