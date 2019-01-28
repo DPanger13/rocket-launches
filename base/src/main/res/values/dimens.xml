@@ -5,4 +5,8 @@
     <dimen name="opacity_secondary">0.54</dimen>
     <dimen name="opacity_disabled">0.23</dimen>
 
+    <dimen name="margin_window_default">16dp</dimen>
+
+    <dimen name="margin_list_item_two_line_vertical">12dp</dimen>
+
 </resources>

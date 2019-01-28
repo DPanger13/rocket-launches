@@ -3,14 +3,17 @@
 
     <style name ="Base.AppTheme.Text" parent="">
         <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="Base.AppTheme.Text.Medium" parent="">
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Base.AppTheme.Text.Light" parent="">
         <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="AppTheme.Text.H1" parent="Base.AppTheme.Text.Light">

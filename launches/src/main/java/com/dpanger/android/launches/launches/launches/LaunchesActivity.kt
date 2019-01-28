@@ -153,14 +153,13 @@ class LaunchAdapter(
         }
 
     class LaunchViewHolder(view: ViewGroup) : RecyclerView.ViewHolder(view) {
-        val id: TextView = view.findViewById(R.id.launches_item_launch_id)
         val name: TextView = view.findViewById(R.id.launches_item_launch_name)
         val dateTime: TextView = view.findViewById(R.id.launches_item_launch_datetime)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val rootView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.topmovies_item_top_movie, parent, false) as ViewGroup
+            .inflate(R.layout.launches_item_launch, parent, false) as ViewGroup
 
         return LaunchViewHolder(rootView)
     }
@@ -169,7 +168,6 @@ class LaunchAdapter(
         val launch = pagedLaunchSummary?.launches?.get(position) ?: return
 
         val launchHolder = holder as LaunchViewHolder
-        launchHolder.id.text = launch.id.toString()
         launchHolder.name.text = launch.name
         launchHolder.dateTime.text = launch.dateTime.toString()
 
