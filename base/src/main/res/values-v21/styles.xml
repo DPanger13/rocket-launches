@@ -1,35 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name ="Base.AppTheme.Text" parent="">
-        <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textColor">@android:color/black</item>
-    </style>
-
-    <style name="Base.AppTheme.Text.Medium" parent="">
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="Base.AppTheme.Text.Light" parent="">
-        <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textColor">@android:color/black</item>
-    </style>
-
     <style name="AppTheme.Text.H1" parent="Base.AppTheme.Text.Light">
         <item name="android:textSize">96sp</item>
+        <item name="android:letterSpacing">-0.0156</item>
     </style>
 
     <style name="AppTheme.Text.H2" parent="Base.AppTheme.Text.Light">
         <item name="android:textSize">60sp</item>
+        <item name="android:letterSpacing">-0.0083</item>
     </style>
 
     <style name="AppTheme.Text.H3" parent="Base.AppTheme.Text">
         <item name="android:textSize">48sp</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="AppTheme.Text.H4" parent="Base.AppTheme.Text">
         <item name="android:textSize">34sp</item>
+        <item name="android:letterSpacing">.0074</item>
     </style>
 
     <style name="AppTheme.Text.H4.Inverse">
@@ -38,6 +27,7 @@
 
     <style name="AppTheme.Text.H5" parent="Base.AppTheme.Text">
         <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="AppTheme.Text.H5.Inverse">
@@ -46,14 +36,17 @@
 
     <style name="AppTheme.Text.H6" parent="Base.AppTheme.Text.Medium">
         <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.0075</item>
     </style>
 
     <style name="AppTheme.Text.Subtitle1" parent="Base.AppTheme.Text">
         <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.0094</item>
     </style>
 
     <style name="AppTheme.Text.Subtitle2" parent="Base.AppTheme.Text.Light">
         <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.0071</item>
     </style>
 
     <style name="AppTheme.Text.Subtitle2.Inverse">
@@ -62,26 +55,29 @@
 
     <style name="AppTheme.Text.Body1" parent="Base.AppTheme.Text">
         <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.0313</item>
     </style>
 
     <style name="AppTheme.Text.Body2" parent="Base.AppTheme.Text">
         <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.0179</item>
     </style>
 
     <style name="AppTheme.Text.Button" parent="Base.AppTheme.Text.Medium">
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.0893</item>
     </style>
 
     <style name="AppTheme.Text.Caption" parent="Base.AppTheme.Text">
         <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.0333</item>
     </style>
 
     <style name="AppTheme.Text.Overline" parent="Base.AppTheme.Text">
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.15</item>
     </style>
-
-    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
 </resources>

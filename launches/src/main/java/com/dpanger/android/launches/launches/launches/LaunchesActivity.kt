@@ -15,6 +15,7 @@ import com.dpanger.android.launches.launches.launch.LaunchActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.launches_activity_launches.*
+import org.threeten.bp.format.DateTimeFormatter
 import toothpick.Scope
 import toothpick.Toothpick
 import toothpick.config.Module
@@ -43,8 +44,7 @@ class LaunchesActivity : AppCompatActivity() {
 
         if (savedInstanceState != null) initFromSavedState(savedInstanceState)
 
-        setContentView(R.layout.launches_activity_launches)
-        initLaunchList(pagedLaunchSummary)
+        initView()
     }
 
     private fun createDependencyInjectionScope(): Scope {
@@ -64,6 +64,16 @@ class LaunchesActivity : AppCompatActivity() {
 
     private fun initFromSavedState(savedInstanceState: Bundle) {
         pagedLaunchSummary = savedInstanceState.getParcelable(KEY_LAUNCHES)
+    }
+
+    private fun initView() {
+        setContentView(R.layout.launches_activity_launches)
+        initToolbar()
+        initLaunchList(pagedLaunchSummary)
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(launches_activity_launches_toolbar)
     }
 
     private fun initLaunchList(pagedLaunchSummary: PagedLaunchSummary?) {
@@ -153,14 +163,13 @@ class LaunchAdapter(
         }
 
     class LaunchViewHolder(view: ViewGroup) : RecyclerView.ViewHolder(view) {
-        val id: TextView = view.findViewById(R.id.launches_item_launch_id)
         val name: TextView = view.findViewById(R.id.launches_item_launch_name)
         val dateTime: TextView = view.findViewById(R.id.launches_item_launch_datetime)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val rootView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.topmovies_item_top_movie, parent, false) as ViewGroup
+            .inflate(R.layout.launches_item_launch, parent, false) as ViewGroup
 
         return LaunchViewHolder(rootView)
     }
@@ -169,9 +178,10 @@ class LaunchAdapter(
         val launch = pagedLaunchSummary?.launches?.get(position) ?: return
 
         val launchHolder = holder as LaunchViewHolder
-        launchHolder.id.text = launch.id.toString()
         launchHolder.name.text = launch.name
-        launchHolder.dateTime.text = launch.dateTime.toString()
+
+        val formatter = DateTimeFormatter.ofPattern("MMM d")
+        launchHolder.dateTime.text = launch.dateTime.format(formatter)
 
         launchHolder.itemView.setOnClickListener { onLaunchClicked.invoke(launch) }
     }

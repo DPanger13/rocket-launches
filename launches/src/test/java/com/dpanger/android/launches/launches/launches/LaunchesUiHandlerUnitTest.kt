@@ -23,7 +23,7 @@ internal class LaunchesUiHandlerUnitTest {
         val launch = LaunchSummary(
             1234,
             "name",
-            LocalDateTime.now()
+            LocalDateTime.of(2008, 1, 1, 0, 0)
         )
         uiHandler.actions.subscribe(actionSubscriber)
 

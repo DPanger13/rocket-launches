@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height_list_item_two_line_text_only">
+
+    <TextView
+            android:id="@+id/launches_item_launch_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_window_default"
+            android:layout_marginStart="@dimen/margin_window_default"
+            android:layout_marginTop="@dimen/margin_list_item_two_line_vertical_text_only"
+            android:alpha="@dimen/opacity_primary"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@id/launches_item_launch_datetime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Launch 1"
+            style="@style/AppTheme.Text.Body1"/>
+
+    <TextView
+            android:id="@+id/launches_item_launch_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_list_item_two_line_vertical_text_only"
+            android:layout_marginStart="@dimen/margin_window_default"
+            android:alpha="@dimen/opacity_secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/launches_item_launch_name"
+            tools:text="Mar 9, 2018"
+            style="@style/AppTheme.Text.Body2"/>
+
+</android.support.constraint.ConstraintLayout>

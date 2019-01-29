@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
     }
 
     buildTypes {
@@ -34,7 +34,10 @@ dependencies {
 
     def androidx_version = "1.0.0"
     implementation "androidx.appcompat:appcompat:$androidx_version"
+
+    api 'com.android.support.constraint:constraint-layout:1.1.2'
 }
+
 repositories {
     mavenCentral()
 }

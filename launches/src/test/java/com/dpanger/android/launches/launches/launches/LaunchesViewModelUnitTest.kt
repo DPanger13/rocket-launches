@@ -22,14 +22,12 @@ class LaunchesViewModelUnitTest {
 
     @Test
     fun GetUpcomingLaunches_RepositoryUsed() {
-        val offset = 0
-
         val launchesFlowable = Flowable.empty<PagedLaunchSummary>()
-        whenever(repository.getUpcomingLaunches(offset)).thenReturn(launchesFlowable)
+        whenever(repository.getUpcomingLaunches()).thenReturn(launchesFlowable)
 
         viewModel.topMovies
 
-        verify(repository).getUpcomingLaunches(offset)
+        verify(repository).getUpcomingLaunches()
     }
 
 }

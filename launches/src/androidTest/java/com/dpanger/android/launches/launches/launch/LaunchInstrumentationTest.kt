@@ -33,7 +33,8 @@ class LaunchInstrumentationTest {
         val dateTime = LocalDateTime.now()
         val locationName = "Location 2"
         val rocketName = "Rocket 1"
-        val missionName = "Mission 3"
+        val missionName1 = "Mission 3"
+        val missionName2 = "Mission 6"
 
         Toothpick.openScope(LaunchActivity::class.java).installTestModules(object : Module() {
             init {
@@ -46,7 +47,7 @@ class LaunchInstrumentationTest {
                                 dateTime,
                                 Launch.Location(locationName),
                                 Launch.Rocket(rocketName),
-                                listOf(Launch.Mission(missionName))
+                                listOf(Launch.Mission(missionName1), Launch.Mission(missionName2))
                             )
 
                             return Flowable.just(launch)
@@ -62,16 +63,16 @@ class LaunchInstrumentationTest {
 
         val context = InstrumentationRegistry.getInstrumentation().targetContext.applicationContext
         val intent = Intent(context, LaunchActivity::class.java)
-        intent.putExtra("extra_id_launch", "id")
+        intent.putExtra("extra_id_launch", id)
         intentRule.launchActivity(intent)
 
         // check that all pieces of info are in the view hierarchy
-        onView(withText(id))
         onView(withText(name))
         onView(withText(dateTime.toString()))
         onView(withText(locationName))
         onView(withText(rocketName))
-        onView(withText(missionName))
+        onView(withText(missionName1))
+        onView(withText(missionName2))
     }
 
     @Test
