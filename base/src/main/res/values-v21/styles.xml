@@ -21,9 +21,17 @@
         <item name="android:letterSpacing">.0074</item>
     </style>
 
+    <style name="AppTheme.Text.H4.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
     <style name="AppTheme.Text.H5" parent="Base.AppTheme.Text">
         <item name="android:textSize">24sp</item>
         <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="AppTheme.Text.H5.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
     <style name="AppTheme.Text.H6" parent="Base.AppTheme.Text.Medium">
@@ -39,6 +47,10 @@
     <style name="AppTheme.Text.Subtitle2" parent="Base.AppTheme.Text.Light">
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.0071</item>
+    </style>
+
+    <style name="AppTheme.Text.Subtitle2.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
     <style name="AppTheme.Text.Body1" parent="Base.AppTheme.Text">

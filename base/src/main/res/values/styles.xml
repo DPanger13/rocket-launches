@@ -32,8 +32,16 @@
         <item name="android:textSize">34sp</item>
     </style>
 
+    <style name="AppTheme.Text.H4.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
+    </style>
+
     <style name="AppTheme.Text.H5" parent="Base.AppTheme.Text">
         <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTheme.Text.H5.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
     <style name="AppTheme.Text.H6" parent="Base.AppTheme.Text.Medium">
@@ -46,6 +54,10 @@
 
     <style name="AppTheme.Text.Subtitle2" parent="Base.AppTheme.Text.Light">
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.Text.Subtitle2.Inverse">
+        <item name="android:textColor">?android:textColorPrimaryInverse</item>
     </style>
 
     <style name="AppTheme.Text.Body1" parent="Base.AppTheme.Text">
@@ -70,8 +82,6 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-    </style>
+    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
 </resources>

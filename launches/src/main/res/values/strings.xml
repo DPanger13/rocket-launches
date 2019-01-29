@@ -2,4 +2,8 @@
 <resources>
     <string name="error">Error</string>
     <string name="launches_activity_launches_toolbar">Rocket Launches</string>
+    <string name="launches_activity_launch_location_subheader">Location</string>
+    <string name="launches_activity_launch_rocket_subheader">Rocket</string>
+    <string name="launches_activity_launch_missions_subheader">Mission(s)</string>
+    <string name="launches_activity_launch_toolbar_title">Launch Details</string>
 </resources>

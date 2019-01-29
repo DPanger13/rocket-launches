@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="list_spacer_height">8dp</dimen>
+
+    <dimen name="margin_window_default">16dp</dimen>
+
     <dimen name="opacity_primary">0.87</dimen>
     <dimen name="opacity_secondary">0.54</dimen>
     <dimen name="opacity_disabled">0.23</dimen>
 
-    <dimen name="margin_window_default">16dp</dimen>
-
+    <!-- List Items -->
     <dimen name="margin_list_item_two_line_vertical_text_only">12dp</dimen>
     <dimen name="min_height_list_item_two_line_text_only">64dp</dimen>
+
+    <dimen name="margin_list_item_one_line_vertical_text_only">12dp</dimen>
+    <dimen name="min_height_list_item_one_line">48dp</dimen>
 
 </resources>

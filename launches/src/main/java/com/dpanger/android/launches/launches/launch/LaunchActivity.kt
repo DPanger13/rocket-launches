@@ -3,6 +3,9 @@ package com.dpanger.android.launches.launches.launch
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dpanger.android.launches.data.launches.Launch
 import com.dpanger.android.launches.data.launches.LaunchModule
@@ -10,6 +13,7 @@ import com.dpanger.android.launches.launches.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.launches_activity_launch.*
+import org.threeten.bp.format.DateTimeFormatter
 import toothpick.Scope
 import toothpick.Toothpick
 import toothpick.config.Module
@@ -36,7 +40,7 @@ class LaunchActivity : AppCompatActivity() {
         if (savedInstanceState == null) initFromExtras(intent.extras!!)
         else initFromSavedState(savedInstanceState)
 
-        setContentView(R.layout.launches_activity_launch)
+        initView()
     }
 
     private fun createDependencyInjectionScope(): Scope {
@@ -64,6 +68,13 @@ class LaunchActivity : AppCompatActivity() {
         launch = savedInstanceState.getParcelable(KEY_LAUNCH)
     }
 
+    private fun initView() {
+        setContentView(R.layout.launches_activity_launch)
+
+        setSupportActionBar(launches_activity_launch_toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
     override fun onStart() {
         super.onStart()
 
@@ -88,12 +99,29 @@ class LaunchActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithMovieInfo(launch: Launch) {
-        launches_activity_launch_datetime.text = launch.dateTime.toString()
-        launches_activity_launch_id.text = launch.id.toString()
+        val formatter = DateTimeFormatter.ofPattern("MMM d '@' K':'mm a")
+        launches_activity_launch_datetime.text = launch.dateTime.format(formatter)
+
         launches_activity_launch_location.text = launch.location.name
-        launches_activity_launch_missions.text = launch.missions.toString()
         launches_activity_launch_name.text = launch.name
         launches_activity_launch_rocket.text = launch.rocket.name
+
+        addMissionViews(launch.missions)
+
+    }
+
+    private fun addMissionViews(missions: List<Launch.Mission>) {
+        val inflater = LayoutInflater.from(this)
+
+        val container = launches_activity_launch_missions_container
+        container.removeAllViews()
+
+        for (mission in missions) {
+            val missionView = inflater.inflate(R.layout.launches_item_mission, container, false)
+            missionView.findViewById<TextView>(R.id.launches_item_mission_name).text = mission.name
+
+            container.addView(missionView)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -115,6 +143,16 @@ class LaunchActivity : AppCompatActivity() {
 
         super.onDestroy()
     }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean =
+        when (item?.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
 
     companion object {
         private val INJECT_SCOPE = LaunchActivity::class.java
