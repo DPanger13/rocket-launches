@@ -7,3 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0](https://github.com/DPanger13/rocket-launches/tree/v1.0.0) - 2018-01-25
 ### Added
 - Initial release
+
+## [1.1.0](https://github.com/DPanger13/rocket-launches/tree/app-v1.1.0) - 2018-01-29
+### Changed
+- UI of the app has been updated with an actual design.
