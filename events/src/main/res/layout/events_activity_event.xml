@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarLayout.Theme">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/events_activity_event_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@string/events_activity_launch_toolbar_title"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?colorPrimaryLight">
+
+                <include android:id="@+id/events_activity_spacer_top" layout="@layout/list_spacer"/>
+
+                <TextView
+                        android:id="@+id/events_activity_event_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        android:layout_marginTop="@dimen/base_margin_window_default"
+                        android:alpha="@dimen/base_opacity_primary"
+                        app:layout_constraintBottom_toTopOf="@id/events_activity_event_datetime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/events_activity_spacer_top"
+                        tools:text="Private Label Presents: The So What Tour"
+                        style="@style/AppTheme.Text.H5"/>
+
+                <TextView
+                        android:id="@+id/events_activity_event_datetime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/base_margin_window_default"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        android:alpha="@dimen/base_opacity_secondary_inverse"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="Thu Jan 31 @ 7:00 PM"
+                        style="@style/AppTheme.Text.Subtitle2.Inverse"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                    android:id="@+id/events_activity_event_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#400498"
+                    tools:text="Error"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/base_min_height_list_item_one_line">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="@dimen/base_opacity_primary"
+                        android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:text="@string/events_activity_event_subhead_artists"
+                        android:textColor="?colorPrimary"
+                        style="@style/AppTheme.Text.Caption"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/events_activity_event_artists_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/base_min_height_list_item_one_line">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="@dimen/base_opacity_primary"
+                        android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:text="@string/events_activity_event_subhead_venue"
+                        android:textColor="?colorPrimary"
+                        style="@style/AppTheme.Text.Caption"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="@dimen/base_min_height_list_item_two_line_text_only"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/events_activity_event_venue_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="@dimen/base_opacity_primary"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        tools:text="Stereo Live"
+                        style="@style/AppTheme.Text.Body1"/>
+
+                <TextView
+                        android:id="@+id/events_activity_event_venue_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="@dimen/base_opacity_secondary"
+                        android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_marginStart="@dimen/base_margin_window_default"
+                        tools:text="San Antonio"
+                        style="@style/AppTheme.Text.Body2"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/list_spacer"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

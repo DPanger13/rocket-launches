@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#546e7a</color>
-    <color name="colorPrimaryDark">#29434e</color>
-    <color name="colorPrimaryLight">#819ca9</color>
-    <color name="colorAccent">#7a545b</color>
+    <!-- Theme -->
+    <color name="colorPrimary">@color/red_400</color>
+    <color name="colorPrimaryDark">@color/red_400_dark</color>
+    <color name="colorPrimaryLight">@color/red_400_light</color>
+    <color name="colorAccent">@color/gold</color>
+    <color name="window_background">@color/red_50</color>
+
+    <!-- Color palette -->
+    <color name="red_400">#EF5350</color>
+    <color name="red_400_dark">#B61827</color>
+    <color name="red_400_light">#FF867C</color>
+    <color name="red_50">#FFEBEE</color>
+
+    <color name="gold">#EFA250</color>
+
+    <!-- Other -->
+    <color name="divider">#3B000000</color>
 
 </resources>

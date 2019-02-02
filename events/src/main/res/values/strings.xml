@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Error</string>
+    <string name="events_activity_launches_toolbar">Upcoming Events</string>
+    <string name="events_activity_launch_toolbar_title">Event Details</string>
+    <string name="events_label_event_small">Small/Medium Event</string>
+    <string name="events_label_event_massive">Massive Event</string>
+    <string name="events_label_headliner">Headliner</string>
+    <string name="events_activity_event_subhead_artists">Artists</string>
+    <string name="events_activity_event_subhead_venue">Venue</string>
+</resources>
