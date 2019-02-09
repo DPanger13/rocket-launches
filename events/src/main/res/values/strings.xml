@@ -8,4 +8,5 @@
     <string name="events_label_headliner">Headliner</string>
     <string name="events_activity_event_subhead_artists">Artists</string>
     <string name="events_activity_event_subhead_venue">Venue</string>
+    <string name="events_activity_event_fab">Get Tickets</string>
 </resources>

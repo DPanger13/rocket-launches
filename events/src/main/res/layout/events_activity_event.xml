@@ -25,107 +25,141 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-            <android.support.constraint.ConstraintLayout
+            <ImageView
+                    android:id="@+id/events_activity_event_banner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?colorPrimaryLight">
-
-                <include android:id="@+id/events_activity_spacer_top" layout="@layout/list_spacer"/>
-
-                <TextView
-                        android:id="@+id/events_activity_event_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/base_margin_window_default"
-                        android:layout_marginStart="@dimen/base_margin_window_default"
-                        android:layout_marginTop="@dimen/base_margin_window_default"
-                        android:alpha="@dimen/base_opacity_primary"
-                        app:layout_constraintBottom_toTopOf="@id/events_activity_event_datetime"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/events_activity_spacer_top"
-                        tools:text="Private Label Presents: The So What Tour"
-                        style="@style/AppTheme.Text.H5"/>
-
-                <TextView
-                        android:id="@+id/events_activity_event_datetime"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/base_margin_window_default"
-                        android:layout_marginEnd="@dimen/base_margin_window_default"
-                        android:layout_marginStart="@dimen/base_margin_window_default"
-                        android:alpha="@dimen/base_opacity_secondary_inverse"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        tools:text="Thu Jan 31 @ 7:00 PM"
-                        style="@style/AppTheme.Text.Subtitle2.Inverse"/>
-
-            </android.support.constraint.ConstraintLayout>
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="#000000"
+                    tools:ignore="ContentDescription"
+                    tools:visibility="visible"/>
 
             <TextView
-                    android:id="@+id/events_activity_event_error"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#400498"
-                    tools:text="Error"/>
-
-            <LinearLayout
+                    android:id="@+id/events_activity_event_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:minHeight="@dimen/base_min_height_list_item_one_line">
+                    android:layout_marginEnd="@dimen/base_margin_window_default"
+                    android:layout_marginStart="@dimen/base_margin_window_default"
+                    android:layout_marginTop="@dimen/base_margin_window_default"
+                    android:alpha="@dimen/base_opacity_primary"
+                    app:layout_constraintBottom_toTopOf="@id/events_activity_event_datetime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_banner"
+                    tools:text="Private Label Presents: The So What Tour"
+                    style="@style/AppTheme.Text.H5"/>
+
+            <TextView
+                    android:id="@+id/events_activity_event_datetime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/base_margin_window_default"
+                    android:layout_marginEnd="@dimen/base_margin_window_default"
+                    android:layout_marginStart="@dimen/base_margin_window_default"
+                    android:alpha="@dimen/base_opacity_secondary_inverse"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_name"
+                    tools:text="Thu Jan 31 @ 7:00 PM"
+                    style="@style/AppTheme.Text.Subtitle2"/>
+
+            <View
+                    android:id="@+id/events_activity_event_header_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/base_height_divider"
+                    android:background="?dividerColor"
+                    android:layout_marginTop="@dimen/base_margin_window_default"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_datetime"/>
+
+            <RelativeLayout
+                    android:id="@+id/events_activity_event_artists_header_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/base_min_height_list_item_one_line"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_header_divider">
 
                 <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:alpha="@dimen/base_opacity_primary"
                         android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
                         android:layout_marginEnd="@dimen/base_margin_window_default"
                         android:layout_marginStart="@dimen/base_margin_window_default"
                         android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/events_activity_event_artists_header_icon"
                         android:text="@string/events_activity_event_subhead_artists"
-                        android:textColor="?colorPrimary"
-                        style="@style/AppTheme.Text.Caption"/>
+                        style="@style/AppTheme.Text.Body1"/>
 
-            </LinearLayout>
+                <ImageView
+                        android:id="@+id/events_activity_event_artists_header_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:alpha="@dimen/base_opacity_primary"
+                        app:srcCompat="@drawable/ic_expand_more"
+                        tools:ignore="ContentDescription"/>
+
+            </RelativeLayout>
 
             <LinearLayout
                     android:id="@+id/events_activity_event_artists_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_artists_header_label"/>
 
-            <LinearLayout
+            <RelativeLayout
+                    android:id="@+id/events_activity_event_venue_header_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:minHeight="@dimen/base_min_height_list_item_one_line">
+                    android:minHeight="@dimen/base_min_height_list_item_one_line"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_artists_container">
 
                 <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:alpha="@dimen/base_opacity_primary"
                         android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
                         android:layout_marginEnd="@dimen/base_margin_window_default"
                         android:layout_marginStart="@dimen/base_margin_window_default"
                         android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/events_activity_event_venue_header_icon"
                         android:text="@string/events_activity_event_subhead_venue"
-                        android:textColor="?colorPrimary"
-                        style="@style/AppTheme.Text.Caption"/>
+                        style="@style/AppTheme.Text.Body1"/>
 
-            </LinearLayout>
+                <ImageView
+                        android:id="@+id/events_activity_event_venue_header_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/base_margin_window_default"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:alpha="@dimen/base_opacity_primary"
+                        app:srcCompat="@drawable/ic_expand_more"
+                        tools:ignore="ContentDescription"/>
+
+            </RelativeLayout>
 
             <LinearLayout
+                    android:id="@+id/events_activity_event_venue_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:minHeight="@dimen/base_min_height_list_item_two_line_text_only"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_venue_header_label"
+                    tools:visibility="visible">
 
                 <TextView
                         android:id="@+id/events_activity_event_venue_name"
@@ -151,10 +185,23 @@
 
             </LinearLayout>
 
-            <include layout="@layout/list_spacer"/>
+            <include
+                    layout="@layout/list_spacer"
+                    app:layout_constraintTop_toBottomOf="@id/events_activity_event_venue_container"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
     </ScrollView>
+
+    <Button
+            android:id="@+id/events_activity_event_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/base_height_fab"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/base_margin_window_default"
+            android:backgroundTint="?colorAccent"
+            android:elevation="@dimen/base_elevation_fab"
+            android:text="@string/events_activity_event_fab"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

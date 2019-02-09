@@ -24,6 +24,8 @@
     <dimen name="base_padding_card_default">16dp</dimen>
     <dimen name="base_margin_card_label_vertical">12dp</dimen>
     <dimen name="base_card_corner_radius">4dp</dimen>
+    <dimen name="base_elevation_fab">6dp</dimen>
+    <dimen name="base_height_fab">48dp</dimen>
 
     <item name="base_opacity_secondary_inverse" type="dimen" format="float">0.65</item>
 </resources>

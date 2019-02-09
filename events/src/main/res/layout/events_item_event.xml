@@ -20,26 +20,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <LinearLayout
-                    android:id="@+id/events_item_event_label_container"
+            <ImageView
+                    android:id="@+id/events_item_event_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="#000000"
+                    tools:ignore="ContentDescription"
+                    tools:visibility="visible"/>
+
+            <TextView
+                    android:id="@+id/events_item_event_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/base_margin_card_label_vertical"
-                    android:paddingEnd="@dimen/base_padding_card_default"
-                    android:paddingStart="@dimen/base_padding_card_default"
-                    android:paddingTop="@dimen/base_margin_card_label_vertical"
-                    app:layout_constraintBottom_toTopOf="@id/events_item_event_title"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:background="?android:colorPrimary">
-
-                <TextView
-                        android:id="@+id/events_item_event_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:text="@string/events_label_event_massive"
-                        style="@style/AppTheme.Text.Caption"/>
-
-            </LinearLayout>
+                    android:layout_marginStart="@dimen/base_padding_card_default"
+                    android:layout_marginTop="@dimen/base_padding_card_default"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_banner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_goneMarginTop="@dimen/base_padding_card_default"
+                    tools:text="@string/events_label_event_massive"
+                    style="@style/AppTheme.Text.Overline"/>
 
             <TextView
                     android:id="@+id/events_item_event_title"
@@ -54,10 +56,10 @@
                     app:layout_constraintBottom_toTopOf="@id/events_item_event_date"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/events_item_event_label_container"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_label"
                     app:layout_constraintVertical_chainStyle="packed"
                     tools:text="Scratch Sessions"
-                    style="@style/AppTheme.Text.H6"/>
+                    style="@style/AppTheme.Text.H5"/>
 
             <TextView
                     android:id="@+id/events_item_event_date"
@@ -78,68 +80,11 @@
                     android:layout_marginBottom="@dimen/base_padding_card_default"
                     android:layout_marginStart="@dimen/base_padding_card_default"
                     android:alpha="@dimen/base_opacity_secondary"
-                    app:layout_constraintBottom_toTopOf="@id/events_item_event_divider"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/events_item_event_date"
                     tools:text="Dallas"
                     style="@style/AppTheme.Text.Subtitle1"/>
-
-            <View
-                    android:id="@+id/events_item_event_divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/base_height_divider"
-                    android:background="?dividerColor"
-                    app:layout_constraintTop_toBottomOf="@id/events_item_event_city"
-                    app:layout_constraintBottom_toTopOf="@id/events_item_event_headliner_label"/>
-
-            <TextView
-                    android:id="@+id/events_item_event_headliner_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="@dimen/base_min_height_list_item_one_line"
-                    android:layout_marginEnd="@dimen/base_padding_card_default"
-                    android:layout_marginStart="@dimen/base_padding_card_default"
-                    android:alpha="@dimen/base_opacity_primary"
-                    android:gravity="center_vertical"
-                    android:paddingBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
-                    android:paddingTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
-                    android:text="@string/events_label_headliner"
-                    app:layout_constraintTop_toBottomOf="@id/events_item_event_divider"
-                    app:layout_constraintBottom_toTopOf="@id/events_item_event_headliner_container"
-                    style="@style/AppTheme.Text.Overline"/>
-
-            <LinearLayout
-                    android:id="@+id/events_item_event_headliner_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:minHeight="@dimen/base_min_height_list_item_two_line_text_only"
-                    android:orientation="vertical"
-                    android:paddingBottom="@dimen/base_margin_list_item_two_line_vertical_text_only"
-                    android:paddingTop="@dimen/base_margin_list_item_two_line_vertical_text_only"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                <TextView
-                        android:id="@+id/events_item_event_headliner_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/base_padding_card_default"
-                        android:layout_marginStart="@dimen/base_padding_card_default"
-                        android:alpha="@dimen/base_opacity_primary"
-                        tools:text="Stafford Brothers"
-                        style="@style/AppTheme.Text.Body1"/>
-
-                <TextView
-                        android:id="@+id/events_item_event_headliner_genres"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/base_padding_card_default"
-                        android:layout_marginStart="@dimen/base_padding_card_default"
-                        android:alpha="@dimen/base_opacity_secondary"
-                        tools:text="Electro House, Progressive House"
-                        style="@style/AppTheme.Text.Body2"/>
-
-            </LinearLayout>
 
         </android.support.constraint.ConstraintLayout>
 

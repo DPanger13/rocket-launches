@@ -96,7 +96,7 @@
         <item name="android:letterSpacing">0.15</item>
     </style>
 
-    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarLayout.Theme" parent="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
     <style name="AppTheme.Card" parent = "">
         <item name="android:elevation">@dimen/base_elevation_card_resting</item>

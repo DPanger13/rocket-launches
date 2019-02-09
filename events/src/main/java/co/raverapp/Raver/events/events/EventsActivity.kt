@@ -1,9 +1,10 @@
 package co.raverapp.Raver.events.events
 
 import android.os.Bundle
-import android.support.annotation.ColorInt
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +14,11 @@ import co.raverapp.Raver.events.R
 import co.raverapp.Raver.events.event.EventActivity
 import co.raverapp.android.data.events.Event
 import co.raverapp.android.data.events.IEventRepository
+import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.events_activity_events.*
+import org.threeten.bp.LocalDate
 import org.threeten.bp.format.DateTimeFormatter
 import toothpick.Scope
 import toothpick.Toothpick
@@ -157,6 +160,8 @@ class EventAdapter(
     private val onEventClicked: (Event) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    val picasso = Picasso.get()
+
     var events: List<Event>? = events
         set(value) {
             field = value
@@ -165,13 +170,11 @@ class EventAdapter(
         }
 
     class EventViewHolder(view: ViewGroup) : RecyclerView.ViewHolder(view) {
-        val labelContainer: ViewGroup = view.findViewById(R.id.events_item_event_label_container)
+        val banner: ImageView = view.findViewById(R.id.events_item_event_banner)
         val label: TextView = view.findViewById(R.id.events_item_event_label)
         val title: TextView = view.findViewById(R.id.events_item_event_title)
         val date: TextView = view.findViewById(R.id.events_item_event_date)
         val city: TextView = view.findViewById(R.id.events_item_event_city)
-        val headlinerName: TextView = view.findViewById(R.id.events_item_event_headliner_name)
-        val headlinerGernes: TextView = view.findViewById(R.id.events_item_event_headliner_genres)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -190,50 +193,35 @@ class EventAdapter(
     private fun bindEventHolder(holder: EventViewHolder, event: Event) {
         holder.itemView.setOnClickListener { onEventClicked.invoke(event) }
 
-        bindLabel(holder, event)
+        val bannerVisibility =
+            if (event.banner == null) View.GONE
+            else View.VISIBLE
+        holder.banner.visibility = bannerVisibility
+
+        if (event.banner != null) {
+            picasso.load(event.banner.toString()).into(holder.banner)
+        }
+
+        @StringRes val labelResId = if (event.isFestival) {
+            R.string.events_label_event_massive
+        } else {
+            R.string.events_label_event_small
+        }
+        holder.label.setText(labelResId)
 
         holder.title.text = event.title
 
-        val formatter = DateTimeFormatter.ofPattern("MMM d")
-        holder.date.text = event.dateTime.format(formatter)
+        val dateParser = DateTimeFormatter.ISO_LOCAL_DATE
+        val dateFormatter = DateTimeFormatter.ofPattern("MMM d")
+        var dateString = LocalDate.parse(event.dates[0], dateParser).format(dateFormatter)
+        if (event.isFestival) {
+            val endDateFormatter = DateTimeFormatter.ofPattern("d")
+            val endDateString = LocalDate.parse(event.dates.last(), dateParser).format(endDateFormatter)
+            dateString  = "$dateString - $endDateString"
+        }
+        holder.date.text = dateString
 
         holder.city.text = event.venue.city
-
-        val headliner = event.artists[0]
-        holder.headlinerName.text = headliner.name
-        holder.headlinerGernes.text = headliner.genres.joinToString(separator = ", ")
-    }
-
-    private fun bindLabel(holder: EventViewHolder, event: Event) {
-        val indexPrimaryDark = 0
-        val indexPrimaryLight = 1
-        val indexTextPrimary = 2
-        val indexTextPrimaryInverse = 3
-        val attrs = intArrayOf(
-            R.attr.colorPrimaryDark,
-            R.attr.colorPrimaryLight,
-            android.R.attr.textColorPrimary,
-            android.R.attr.textColorPrimaryInverse
-        )
-        val themeAttrs = holder.itemView.context.obtainStyledAttributes(R.style.AppTheme, attrs)
-
-        @StringRes val labelResId: Int
-        @ColorInt val labelTextColor: Int
-        @ColorInt val labelBackgroundColor: Int
-        if (event.isFestival) {
-            labelResId = R.string.events_label_event_massive
-            labelTextColor = themeAttrs.getColor(indexTextPrimaryInverse, 0)
-            labelBackgroundColor = themeAttrs.getColor(indexPrimaryDark, 0)
-        } else {
-            labelResId = R.string.events_label_event_small
-            labelTextColor = themeAttrs.getColor(indexPrimaryLight, 0)
-            labelBackgroundColor = themeAttrs.getColor(indexTextPrimary, 0)
-        }
-        holder.label.setText(labelResId)
-        holder.label.setTextColor(labelTextColor)
-        holder.labelContainer.setBackgroundColor(labelBackgroundColor)
-
-        themeAttrs.recycle()
     }
 
     override fun getItemCount() = events?.size ?: 0

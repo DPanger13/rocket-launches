@@ -3,16 +3,24 @@ package co.raverapp.Raver.events.event
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Matrix
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import co.raverapp.Raver.events.R
 import co.raverapp.android.data.events.Artist
 import co.raverapp.android.data.events.Event
+import com.squareup.picasso.Picasso
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.events_activity_event.*
+import org.threeten.bp.LocalDate
+import org.threeten.bp.LocalTime
+import org.threeten.bp.OffsetTime
 import org.threeten.bp.format.DateTimeFormatter
 import toothpick.Scope
 import toothpick.Toothpick
@@ -67,6 +75,40 @@ class EventActivity : AppCompatActivity() {
 
         setSupportActionBar(events_activity_event_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        initHeaders()
+    }
+
+    private val flipVerticallyMatrix by lazy {
+        val matrix = Matrix()
+        matrix.postRotate(180f)
+
+        matrix
+    }
+
+    private fun initHeaders() {
+        initHeaderClickListener(
+            events_activity_event_artists_header_label,
+            events_activity_event_artists_header_icon,
+            events_activity_event_artists_container
+        )
+
+        initHeaderClickListener(
+            events_activity_event_venue_header_label,
+            events_activity_event_venue_header_icon,
+            events_activity_event_venue_container
+        )
+    }
+
+    private fun initHeaderClickListener(headerContainer: ViewGroup, headerIcon: ImageView, infoContainer: ViewGroup) {
+        headerContainer.setOnClickListener {
+            headerIcon.scaleType = ImageView.ScaleType.MATRIX
+            headerIcon.imageMatrix = flipVerticallyMatrix
+
+            val infoVisibility = infoContainer.visibility
+            if (infoVisibility == View.VISIBLE) infoContainer.visibility = View.GONE
+            else infoContainer.visibility = View.VISIBLE
+        }
     }
 
     override fun onStart() {
@@ -77,10 +119,28 @@ class EventActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun updateUiWithEventInfo(event: Event) {
+        val bannerVisibility =
+            if (event.banner == null) View.GONE
+            else View.VISIBLE
+        events_activity_event_banner.visibility = bannerVisibility
+
+        if (event.banner != null) Picasso.get().load(event.banner.toString()).into(events_activity_event_banner)
+
         events_activity_event_name.text = event.title
 
-        val formatter = DateTimeFormatter.ofPattern("EEE MMM d `@` K a")
-        events_activity_event_datetime.text = event.dateTime.format(formatter)
+        val dateParser = DateTimeFormatter.ISO_LOCAL_DATE
+        val startDateFormatter = DateTimeFormatter.ofPattern("MMM d")
+        var dateString = LocalDate.parse(event.dates[0], dateParser).format(startDateFormatter)
+        if (event.isFestival) {
+            val endDateFormatter = DateTimeFormatter.ofPattern("d")
+            val endDateString = LocalDate.parse(event.dates.last(), dateParser).format(endDateFormatter)
+            dateString = "$dateString - $endDateString"
+        }
+
+        val timeParser = DateTimeFormatter.ISO_LOCAL_TIME
+        val timeFormatter = DateTimeFormatter.ofPattern("hh a")
+        val timeString = LocalTime.parse(event.startTime, timeParser).format(timeFormatter)
+        events_activity_event_datetime.text = "$dateString @ $timeString"
 
         events_activity_event_venue_name.text = event.venue.name
         events_activity_event_venue_location.text = event.venue.city + ", " + event.venue.state
