@@ -26,6 +26,8 @@
     <dimen name="base_card_corner_radius">4dp</dimen>
     <dimen name="base_elevation_fab">6dp</dimen>
     <dimen name="base_height_fab">48dp</dimen>
+    <dimen name="base_height_spacer_fab_bottom">80dp</dimen>
+    <dimen name="base_height_spacer_recyclerview_vertical">4dp</dimen>
 
     <item name="base_opacity_secondary_inverse" type="dimen" format="float">0.65</item>
 </resources>

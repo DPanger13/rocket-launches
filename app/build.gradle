@@ -25,4 +25,8 @@ android {
 dependencies {
     implementation project(':events')
     implementation project(':base')
+
+    api 'com.google.firebase:firebase-firestore:18.0.0'
 }
+
+apply plugin: 'com.google.gms.google-services'

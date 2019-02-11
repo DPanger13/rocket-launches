@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/base_min_height_list_item_two_line_text_only"
+        android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/base_item_two_line_text_only_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="@dimen/base_opacity_primary"
+            android:layout_marginEnd="@dimen/base_margin_window_default"
+            android:layout_marginStart="@dimen/base_margin_window_default"
+            android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+            tools:text="Stafford Brothers"
+            style="@style/AppTheme.Text.Body1"/>
+
+    <TextView
+            android:id="@+id/base_item_two_line_text_only_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="@dimen/base_opacity_secondary"
+            android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
+            android:layout_marginEnd="@dimen/base_margin_window_default"
+            android:layout_marginStart="@dimen/base_margin_window_default"
+            tools:text="Electro House, Progressive House"
+            style="@style/AppTheme.Text.Body2"/>
+
+</LinearLayout>

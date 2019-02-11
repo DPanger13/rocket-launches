@@ -28,13 +28,11 @@ dependencies {
     application project(':app')
     feature project(':events')
 
-    api 'co.raverapp.android.data:base:0.0.0'
+    api 'co.raverapp.android.data:base:0.1.2'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     def androidx_version = "1.0.0"
     implementation "androidx.appcompat:appcompat:$androidx_version"
     implementation "com.google.android.material:material:$androidx_version"
-
-    api 'com.android.support.constraint:constraint-layout:1.1.2'
 }

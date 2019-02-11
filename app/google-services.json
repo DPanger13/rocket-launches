@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "380957070641",
+    "firebase_url": "https://raver-19616.firebaseio.com",
+    "project_id": "raver-19616",
+    "storage_bucket": "raver-19616.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380957070641:android:aa2943d1eb9ed1b5",
+        "android_client_info": {
+          "package_name": "co.raverapp.Raver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380957070641-gotdp97iu04jf2dngf3evgrvhlml54te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWMKiG6zTlNQs8yOPvhXf0N7JaCwUiKYw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

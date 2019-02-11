@@ -6,6 +6,7 @@ import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import co.raverapp.android.data.events.Artist
 import co.raverapp.android.data.events.Event
 import co.raverapp.android.data.events.Promoter
 import co.raverapp.android.data.events.Venue
@@ -26,13 +27,14 @@ class EventInstrumentationTest {
         val title = "event name"
         val event = Event(
             title,
-            LocalDateTime.of(2008, 1, 1, 1, 1),
-            mutableListOf(),
+            "01:00:00",
+            listOf("2001-01-01"),
+            listOf(Artist("", listOf(""))),
             Venue("", "", ""),
-            Promoter(""),
+            listOf(Promoter("")),
             true,
             Event.MinAge.TWENTYONE,
-            URI("example.com")
+            "example.com"
         )
 
         val context = InstrumentationRegistry.getInstrumentation().targetContext.applicationContext

@@ -20,6 +20,7 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.events_activity_events.*
 import org.threeten.bp.LocalDate
 import org.threeten.bp.format.DateTimeFormatter
+import timber.log.Timber
 import toothpick.Scope
 import toothpick.Toothpick
 import toothpick.config.Module
@@ -122,6 +123,8 @@ class EventsActivity : AppCompatActivity() {
 
                 eventAdapter.events = events
             }, {
+                Timber.e(it)
+
                 launches_activity_launches_error.text = "Error"
             })
         disposables.add(disposable)
@@ -194,12 +197,12 @@ class EventAdapter(
         holder.itemView.setOnClickListener { onEventClicked.invoke(event) }
 
         val bannerVisibility =
-            if (event.banner == null) View.GONE
+            if (event.bannerUrl == null) View.GONE
             else View.VISIBLE
         holder.banner.visibility = bannerVisibility
 
-        if (event.banner != null) {
-            picasso.load(event.banner.toString()).into(holder.banner)
+        if (event.bannerUrl != null) {
+            picasso.load(event.bannerUrl).into(holder.banner)
         }
 
         @StringRes val labelResId = if (event.isFestival) {

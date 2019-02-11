@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/events_activity_event_item_header_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_margin_window_default"
+            android:layout_marginStart="@dimen/base_margin_window_default"
+            android:layout_marginTop="@dimen/base_margin_window_default"
+            android:alpha="@dimen/base_opacity_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Private Label Presents: The So What Tour"
+            style="@style/AppTheme.Text.H5"/>
+
+    <TextView
+            android:id="@+id/events_activity_event_item_header_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/base_margin_window_default"
+            android:layout_marginEnd="@dimen/base_margin_window_default"
+            android:layout_marginStart="@dimen/base_margin_window_default"
+            android:alpha="@dimen/base_opacity_secondary_inverse"
+            app:layout_constraintTop_toBottomOf="@id/events_activity_event_item_header_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Thu Jan 31 @ 7:00 PM"
+            style="@style/AppTheme.Text.Subtitle2"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_height_divider"
+            android:background="?dividerColor"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

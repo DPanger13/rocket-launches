@@ -17,10 +17,8 @@ import io.reactivex.Single
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.threeten.bp.LocalDateTime
 import toothpick.Toothpick
 import toothpick.config.Module
-import java.net.URI
 
 @RunWith(AndroidJUnit4::class)
 class EventsInstrumentationTest {
@@ -33,13 +31,14 @@ class EventsInstrumentationTest {
         val title = "event name"
         val event = Event(
             title,
-            LocalDateTime.of(2008, 1, 1, 1, 1),
-            mutableListOf(Artist("name", listOf("genre"))),
+            "01:00:00",
+            listOf("2001-01-01"),
+            listOf(Artist("", listOf(""))),
             Venue("", "", ""),
-            Promoter(""),
+            listOf(Promoter("")),
             true,
             Event.MinAge.TWENTYONE,
-            URI("example.com")
+            "example.com"
         )
 
         Toothpick.openScope(EventsActivity::class.java).installTestModules(object : Module() {
@@ -82,13 +81,14 @@ class EventsInstrumentationTest {
     fun LaunchClicked_DetailScreenShows() {
         val event = Event(
             "",
-            LocalDateTime.of(2008, 1, 1, 1, 1),
-            mutableListOf(Artist("name", listOf("genre"))),
+            "01:00:00",
+            listOf("2001-01-01"),
+            listOf(Artist("", listOf(""))),
             Venue("", "", ""),
-            Promoter(""),
+            listOf(Promoter("")),
             true,
             Event.MinAge.TWENTYONE,
-            URI("example.com")
+            "example.com"
         )
 
         Toothpick.openScope(EventsActivity::class.java).installTestModules(object : Module() {

@@ -1,5 +1,6 @@
 package co.raverapp.Raver.events.events
 
+import co.raverapp.android.data.events.Artist
 import co.raverapp.android.data.events.Event
 import co.raverapp.android.data.events.Promoter
 import co.raverapp.android.data.events.Venue
@@ -25,14 +26,17 @@ internal class EventsUiHandlerUnitTest {
     fun LaunchClicked_LaunchActionEmitted() {
         val event = Event(
             "",
-            LocalDateTime.of(2008, 1, 1, 1, 1),
-            mutableListOf(),
+            "01:00:00",
+            listOf("2001-01-01"),
+            listOf(Artist("", listOf(""))),
             Venue("", "", ""),
-            Promoter(""),
+            listOf(Promoter("")),
             true,
             Event.MinAge.TWENTYONE,
-            URI("example.com")
+            "example.com"
         )
+        event.bannerUrl = "example.com"
+
         uiHandler.actions.subscribe(actionSubscriber)
 
         uiHandler.eventClicked(event)
