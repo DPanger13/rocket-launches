@@ -17,6 +17,7 @@ import co.raverapp.android.data.events.IEventRepository
 import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.events_activity_events.*
 import org.threeten.bp.LocalDate
 import org.threeten.bp.format.DateTimeFormatter
@@ -125,6 +126,18 @@ class EventsActivity : AppCompatActivity() {
 
     private fun fetchMovies() {
         val disposable = viewModel.topMovies
+            .observeOn(Schedulers.computation())
+            .map {
+                val comparator = Comparator<Event> { event1, event2 ->
+                    val parser = DateTimeFormatter.ISO_LOCAL_DATE
+                    val date1 = LocalDate.parse(event1.dates[0], parser)
+                    val date2 = LocalDate.parse(event2.dates[0], parser)
+
+                    date1.compareTo(date2)
+                }
+
+                it.sortedWith(comparator)
+            }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 events = it
