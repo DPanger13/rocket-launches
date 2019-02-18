@@ -1,1 +1,1 @@
-include ':launches', ':app', ':base'
+include ':events', ':app', ':base'

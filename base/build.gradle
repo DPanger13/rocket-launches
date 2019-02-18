@@ -8,10 +8,10 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -26,18 +26,13 @@ android {
 
 dependencies {
     application project(':app')
-    feature project(':launches')
+    feature project(':events')
 
-    implementation 'com.dpanger.android.launches.data:launches:0.5.0'
+    api 'co.raverapp.android.data:base:0.1.2'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     def androidx_version = "1.0.0"
     implementation "androidx.appcompat:appcompat:$androidx_version"
-
-    api 'com.android.support.constraint:constraint-layout:1.1.2'
-}
-
-repositories {
-    mavenCentral()
+    implementation "com.google.android.material:material:$androidx_version"
 }

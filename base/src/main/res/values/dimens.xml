@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="list_spacer_height">8dp</dimen>
+    <dimen name="base_list_spacer_height">8dp</dimen>
 
-    <dimen name="margin_window_default">16dp</dimen>
+    <dimen name="base_margin_window_default">16dp</dimen>
 
-    <dimen name="opacity_primary">0.87</dimen>
-    <dimen name="opacity_secondary">0.54</dimen>
-    <dimen name="opacity_disabled">0.23</dimen>
+    <dimen name="base_opacity_primary">0.87</dimen>
+    <dimen name="base_opacity_secondary">0.54</dimen>
+    <dimen name="base_opacity_disabled">0.23</dimen>
 
     <!-- List Items -->
-    <dimen name="margin_list_item_two_line_vertical_text_only">12dp</dimen>
-    <dimen name="min_height_list_item_two_line_text_only">64dp</dimen>
+    <dimen name="base_margin_list_item_two_line_vertical_text_only">12dp</dimen>
+    <dimen name="base_min_height_list_item_two_line_text_only">64dp</dimen>
 
-    <dimen name="margin_list_item_one_line_vertical_text_only">12dp</dimen>
-    <dimen name="min_height_list_item_one_line">48dp</dimen>
+    <dimen name="base_margin_list_item_one_line_vertical_text_only">12dp</dimen>
+    <dimen name="base_min_height_list_item_one_line">48dp</dimen>
 
+    <dimen name="base_height_divider">1dp</dimen>
+
+    <dimen name="base_elevation_card_resting">1dp</dimen>
+    <dimen name="base_elevation_card_raised">8dp</dimen>
+    <dimen name="base_margin_card_vertical">4dp</dimen>
+    <dimen name="base_padding_card_default">16dp</dimen>
+    <dimen name="base_margin_card_label_vertical">12dp</dimen>
+    <dimen name="base_card_corner_radius">4dp</dimen>
+    <dimen name="base_elevation_fab">6dp</dimen>
+    <dimen name="base_height_fab">48dp</dimen>
+    <dimen name="base_height_spacer_fab_bottom">80dp</dimen>
+    <dimen name="base_height_spacer_recyclerview_vertical">4dp</dimen>
+
+    <item name="base_opacity_secondary_inverse" type="dimen" format="float">0.65</item>
 </resources>

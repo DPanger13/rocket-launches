@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/base_min_height_list_item_one_line">
+
+    <TextView
+            android:id="@+id/base_item_subheader_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="@dimen/base_opacity_primary"
+            android:layout_marginBottom="@dimen/base_margin_list_item_one_line_vertical_text_only"
+            android:layout_marginEnd="@dimen/base_margin_window_default"
+            android:layout_marginStart="@dimen/base_margin_window_default"
+            android:layout_marginTop="@dimen/base_margin_list_item_one_line_vertical_text_only"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            tools:text="Subheader"
+            style="@style/AppTheme.Text.Caption"/>
+
+</RelativeLayout>

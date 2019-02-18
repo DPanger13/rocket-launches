@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/base_margin_card_vertical"
+        android:paddingEnd="@dimen/base_margin_window_default"
+        android:paddingStart="@dimen/base_margin_window_default"
+        android:paddingTop="@dimen/base_margin_card_vertical">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme.Card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/events_item_event_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="#000000"
+                    tools:ignore="ContentDescription"
+                    tools:visibility="visible"/>
+
+            <TextView
+                    android:id="@+id/events_item_event_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_padding_card_default"
+                    android:layout_marginTop="@dimen/base_padding_card_default"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_banner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_goneMarginTop="@dimen/base_padding_card_default"
+                    tools:text="@string/events_label_event_massive"
+                    style="@style/AppTheme.Text.Overline"/>
+
+            <TextView
+                    android:id="@+id/events_item_event_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_padding_card_default"
+                    android:layout_marginStart="@dimen/base_padding_card_default"
+                    android:layout_marginTop="@dimen/base_padding_card_default"
+                    android:alpha="@dimen/base_opacity_primary"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toTopOf="@id/events_item_event_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_label"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="Scratch Sessions"
+                    style="@style/AppTheme.Text.H5"/>
+
+            <TextView
+                    android:id="@+id/events_item_event_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_padding_card_default"
+                    android:alpha="@dimen/base_opacity_primary"
+                    app:layout_constraintBottom_toTopOf="@id/events_item_event_city"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_title"
+                    tools:text="May 9"
+                    style="@style/AppTheme.Text.Subtitle1"/>
+
+            <TextView
+                    android:id="@+id/events_item_event_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/base_padding_card_default"
+                    android:layout_marginStart="@dimen/base_padding_card_default"
+                    android:alpha="@dimen/base_opacity_secondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/events_item_event_date"
+                    tools:text="Dallas"
+                    style="@style/AppTheme.Text.Subtitle1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

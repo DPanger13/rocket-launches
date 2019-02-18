@@ -4,11 +4,11 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.dpanger.android.launches"
-        minSdkVersion 19
+        applicationId "co.raverapp"
+        minSdkVersion 21
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        versionCode 1
+        versionName "1.0"
     }
 
     buildTypes {
@@ -23,6 +23,10 @@ android {
 }
 
 dependencies {
-    implementation project(':launches')
+    implementation project(':events')
     implementation project(':base')
+
+    api 'com.google.firebase:firebase-firestore:18.0.0'
 }
+
+apply plugin: 'com.google.gms.google-services'
