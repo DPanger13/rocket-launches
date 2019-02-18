@@ -80,11 +80,11 @@ class EventsActivity : AppCompatActivity() {
     }
 
     private fun initToolbar() {
-        setSupportActionBar(launches_activity_launches_toolbar)
+        setSupportActionBar(events_activity_events_toolbar)
     }
 
     private fun initRefreshLayout() {
-        val refreshLayout = launches_activity_launches_refreshlayout
+        val refreshLayout = events_activity_events_refreshlayout
         refreshLayout.setOnRefreshListener {
             fetchMovies()
         }
@@ -95,7 +95,7 @@ class EventsActivity : AppCompatActivity() {
         eventAdapter = EventAdapter(events) {
             uiHandler.eventClicked(it)
         }
-        launches_activity_launches_recyclerview.apply {
+        events_activity_events_recyclerview.apply {
             layoutManager = viewManager
             adapter = eventAdapter
         }
@@ -129,14 +129,14 @@ class EventsActivity : AppCompatActivity() {
             .subscribe({
                 events = it
 
-                val refreshLayout = launches_activity_launches_refreshlayout
+                val refreshLayout = events_activity_events_refreshlayout
                 if (refreshLayout.isRefreshing) refreshLayout.isRefreshing = false
 
                 eventAdapter.events = events
             }, {
                 Timber.e(it)
 
-                launches_activity_launches_error.text = "Error"
+                events_activity_events_error.text = "Error"
             })
         disposables.add(disposable)
     }

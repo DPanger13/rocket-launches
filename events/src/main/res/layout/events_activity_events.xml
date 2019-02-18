@@ -12,7 +12,7 @@
             android:theme="@style/AppTheme.AppBarLayout.Theme">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/launches_activity_launches_toolbar"
+                android:id="@+id/events_activity_events_toolbar"
                 android:layout_width="wrap_content"
                 android:layout_height="?actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways"
@@ -21,20 +21,20 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
-            android:id="@+id/launches_activity_launches_error"
+            android:id="@+id/events_activity_events_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="?actionBarSize"
             tools:text="Error"/>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/launches_activity_launches_refreshlayout"
+            android:id="@+id/events_activity_events_refreshlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/launches_activity_launches_recyclerview"
+                android:id="@+id/events_activity_events_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

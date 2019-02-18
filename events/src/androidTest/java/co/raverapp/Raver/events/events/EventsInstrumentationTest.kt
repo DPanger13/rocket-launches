@@ -107,7 +107,7 @@ class EventsInstrumentationTest {
 
         Thread.sleep(1000)
 
-        onView(withId(R.id.launches_activity_launches_recyclerview))
+        onView(withId(R.id.events_activity_events_recyclerview))
             .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
 
         intended(hasComponent(EventActivity::class.java.name))
