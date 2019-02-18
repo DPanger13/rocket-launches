@@ -75,11 +75,19 @@ class EventsActivity : AppCompatActivity() {
     private fun initView() {
         setContentView(R.layout.events_activity_events)
         initToolbar()
+        initRefreshLayout()
         initEventsList(events)
     }
 
     private fun initToolbar() {
         setSupportActionBar(launches_activity_launches_toolbar)
+    }
+
+    private fun initRefreshLayout() {
+        val refreshLayout = launches_activity_launches_refreshlayout
+        refreshLayout.setOnRefreshListener {
+            fetchMovies()
+        }
     }
 
     private fun initEventsList(events: List<Event>?) {
@@ -120,6 +128,9 @@ class EventsActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 events = it
+
+                val refreshLayout = launches_activity_launches_refreshlayout
+                if (refreshLayout.isRefreshing) refreshLayout.isRefreshing = false
 
                 eventAdapter.events = events
             }, {
