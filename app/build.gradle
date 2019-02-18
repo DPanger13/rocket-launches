@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "co.raverapp.Raver"
+        applicationId "co.raverapp"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
