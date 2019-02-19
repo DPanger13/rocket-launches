@@ -231,7 +231,7 @@ private class InfoAdapter(private val event: Event) : RecyclerView.Adapter<Recyc
             }
 
             val timeParser = DateTimeFormatter.ISO_LOCAL_TIME
-            val timeFormatter = DateTimeFormatter.ofPattern("hh a")
+            val timeFormatter = DateTimeFormatter.ofPattern("h a")
             val timeString = LocalTime.parse(event.startTime, timeParser).format(timeFormatter)
             dateTime.text = "$dateString @ $timeString"
         }
