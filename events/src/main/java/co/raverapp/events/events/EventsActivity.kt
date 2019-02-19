@@ -258,10 +258,4 @@ class EventAdapter(
 
     override fun getItemCount() = events?.size ?: 0
 
-    override fun onViewDetachedFromWindow(holder: RecyclerView.ViewHolder) {
-        super.onViewDetachedFromWindow(holder)
-
-        holder.itemView.setOnClickListener(null)
-    }
-
 }
