@@ -20,7 +20,7 @@ android {
 dependencies {
     implementation project(':base')
 
-    implementation 'co.raverapp.android.data:events:0.2.6'
+    implementation 'co.raverapp.android.data:events:0.2.9'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
